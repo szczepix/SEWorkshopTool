@@ -41,7 +41,7 @@ namespace Phoenix.WorkshopTool
         [OptionArray('x', "exclude", HelpText = "List of extensions to exclude from archiving for upload")]
         public string[] ExcludeExtensions { get; set; }
         
-        [OptionArray('n', "names", HelpText = "Set mod name")]
+        [OptionArray('n', "names", DefaultValue = null, HelpText = "Set mod name")]
         public string[] ModNames { get; set; }
 
         // Disable for now

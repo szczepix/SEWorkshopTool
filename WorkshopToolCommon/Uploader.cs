@@ -59,13 +59,13 @@ namespace Phoenix.WorkshopTool
         public ulong ModId { get { return m_modId; } }
         public string ModPath { get { return m_modPath; } }
 
-        public Uploader(WorkshopType type, string path, string name, string[] tags = null, string[] ignoredExtensions = null, bool compile = false, bool dryrun = false, bool development = false, PublishedFileVisibility visibility = PublishedFileVisibility.Public, bool force = false)
+        public Uploader(WorkshopType type, string path, string name = null, string[] tags = null, string[] ignoredExtensions = null, bool compile = false, bool dryrun = false, bool development = false, PublishedFileVisibility visibility = PublishedFileVisibility.Public, bool force = false)
         {
             m_modPath = path;
             m_compile = compile;
             m_dryrun = dryrun;
             m_visibility = visibility;
-            m_title = name;
+            m_title = name ?? Path.GetFileName(path);
             m_modId = MySteamWorkshop.GetWorkshopIdFromLocalMod(m_modPath);
             m_type = type;
             m_isDev = development;
